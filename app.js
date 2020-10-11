@@ -16,7 +16,20 @@ const server = http.createServer((req, res) => {
   }
   
   if(url === '/message' && method === 'POST'){
-    fs.writeFileSync('message.txt', 'DUMMY');
+    const body = [];
+    
+    // To collect the data sent via request
+    req.on('data', (chunk) => {
+      body.push(chunk);
+    });
+
+    // To parse the data collected from request when data will reach to it's end
+    req.on('end', () => {
+      const parsedBody = Buffer.concat(body).toString();
+      const message = parsedBody.split('=')[1];
+      fs.writeFileSync('message.txt', message);
+    });
+
     res.statusCode = 302;
     res.setHeader('location', '/');
     return res.end();
