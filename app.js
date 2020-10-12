@@ -24,15 +24,17 @@ const server = http.createServer((req, res) => {
     });
 
     // To parse the data collected from request when data will reach to it's end
-    req.on('end', () => {
+    return req.on('end', () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
-      fs.writeFileSync('message.txt', message);
-    });
 
-    res.statusCode = 302;
-    res.setHeader('location', '/');
-    return res.end();
+      // writeFile is asynchronous and writeFileSync is synchronous
+      fs.writeFile('message.txt', message, err => {
+        res.statusCode = 302;
+        res.setHeader('location', '/');
+        return res.end();
+      });
+    });
   }
   
   res.setHeader('Content-type', 'text/html');
