@@ -26,7 +26,7 @@ const requestHandler = (req, res) => {
       const message = parsedBody.split('=')[1];
 
       // writeFile is asynchronous and writeFileSync is synchronous
-      fs.writeFile('message.txt', message, err => {
+      fs.writeFile('./message.txt', message, err => {
         res.statusCode = 302;
         res.setHeader('location', '/');
         return res.end();
