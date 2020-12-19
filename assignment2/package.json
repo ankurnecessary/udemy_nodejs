@@ -1,0 +1,25 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "Practice of basic express code",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankurnecessary/udemy_nodejs/tree/assignment2"
+  },
+  "keywords": [
+    "express",
+    "node"
+  ],
+  "author": "Ankur Gupta",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
