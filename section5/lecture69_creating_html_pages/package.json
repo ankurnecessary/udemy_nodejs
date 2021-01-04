@@ -1,0 +1,31 @@
+{
+  "name": "lecture42",
+  "version": "1.0.0",
+  "description": "This is the code for lecture42 of section 4",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankurnecessary/udemy_nodejs.git"
+  },
+  "keywords": [
+    "npm-scripts"
+  ],
+  "author": "Ankur Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankurnecessary/udemy_nodejs/issues"
+  },
+  "homepage": "https://github.com/ankurnecessary/udemy_nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
