@@ -43,7 +43,7 @@ module.exports = class Product {
   static fetchAll(cb) {
     fs.readFile(productPath, (err, fileContent) => { 
       
-      if(err) cb([]);
+      if(err) return cb([]);
       cb(JSON.parse(fileContent));
 
     });
